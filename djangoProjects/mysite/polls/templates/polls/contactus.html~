@@ -1,0 +1,90 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/styles.css' %}" />
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>NITT-Connect!!</title>
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="images/icon.ico" />
+</head>
+
+<body>
+<div id="headWrap">
+ <div id="headpanel">
+  <div id=""><font face="verdana" color="white"><h1>NITT Connect!</h1></font></div>
+ <!-- <div id="quots">"Yahooo"</div> -->
+  <div id="menu">
+   <ul>
+    <li><a href="">Home</a></li>
+<!--
+    <li><div class="gap"></div></li>
+    <li><a href="#">About Us</a></li> -->
+    <li><div class="gap"></div></li>
+    <li><a href="#">Newsletter</a></li>
+    <li><div class="gap"></div></li>
+    <li><a href="#">Want to Post??</a></li>
+    <li><div class="gap"></div></li>
+    <li><a href="contactus.html">Contact Us</a></li>
+   </ul>
+  </div>
+ </div>
+</div>
+<div id="contentWrap">
+ <div id="contentPanel">
+  <div id="leftPanel">
+   <div class="toplinks">
+   </div>
+   <div id="loginPanel">
+   </div>
+  </div> 
+
+  <div id="middlePanel">
+   <div class="top">
+    <h3>Gaurav Sharma</h3>
+    <p>
+		MCA IInd Year<br>
+		Mob: 9791418378<br>
+		Tumblr: www.tumblr.com/gaurex<br>
+		mail: 205112075@nitt.edu / mail.gaurav89@gmail.com
+		
+		<br>
+		<br>
+    </p>
+	
+	<h2><u>A project Under</u></h2>
+	<h3><u><b>Janet Joshua<u></h3>
+	<p>
+		mail: janet@nitt.edu</b>
+	</p>
+   
+   </div>
+   <div class="bottom">
+   
+  </div>
+  </div>
+  <div id="rigtPanel">
+   <div class="services">
+   </div>
+   <div class="contacts">
+   </div>
+  </div>
+ </div>
+</div>
+<div id="footWrap">
+ <div id="footPanel">
+  <div id="footNav">
+   
+  </div>
+  <p>© Copyright Information Goes Here. All Rights Reserved.</p>
+  <p>Designed by <a href="http://www.tumblr.com/gaurex">Gaurav</a></p>
+  <div id="validation">
+  
+  </div>
+ </div>
+</div>
+</body>
+</html>

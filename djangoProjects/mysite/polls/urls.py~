@@ -1,0 +1,24 @@
+from django.conf.urls import url, patterns,include
+
+from polls import views
+
+urlpatterns=patterns('',
+	# comment URL
+	(r'^comments/', include('django.contrib.comments.urls')),
+
+	url(r'^$',views.index,name='index'),
+	url(r'^contactus.html/$',views.contactUs,name='contactUs'),
+	url(r'^(?P<poll_id>\d+)/$',views.details,name='details'),
+	url(r'^(?P<poll_id>\d+)/$',views.result,name='result'),
+	url(r'^(?P<poll_id>\d+)',views.vote,name='vote'),
+	url(r'^registeration/$',views.user_register,name='user_register'),
+	url(r'^registeration/reg_success/$',views.reg_success,name='reg_sucess'),
+	# user auth urls
+	url(r'^auth/$',views.auth_view,name='auth_view'),
+	url(r'^auth/logged/home/$',views.atHome,name='atHome'),
+	#user loggedin HOME usrl
+	url(r'^auth/logged/home/logout/$',views.logout,name='logout'),
+	url(r'^auth/logged/home/contactus/$',views.contactUs,name='contactUs'),
+	url(r'^auth/logged/home/userPost/$',views.userPost,name='userPost'),
+	url(r'^auth/logged/singlepost/(?P<post_id>\d+)/$',views.singlePost,name='singlePost'),	
+)

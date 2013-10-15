@@ -1,0 +1,142 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/styles.css' %}" />
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>NITT-Connect!!</title>
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="images/icon.ico" />
+</head>
+
+<body>
+<div id="headWrap">
+ <div id="headpanel">
+  <div id=""><font face="Verdana" color="white"><h1>NITT Connect!</h1></font></div>
+  <div id="menu">
+   <ul>
+    <li><a href="#">Home</a></li>
+    <li><div class="gap"></div></li>
+    <li><a href="#">Newsletter</a></li>
+    <li><div class="gap"></div></li>
+    <li><a href="userPost/{{ user.id }}">Want to Post??</a></li>
+    <li><div class="gap"></div></li>
+    <li><a href="logout">I'm Out</a></li>
+    <li><div class="gap"></div></li>
+    <li><a href="contactus">Contact Us</a></li>
+   </ul>
+  </div>
+ </div>
+</div>
+<div id="contentWrap">
+ <div id="contentPanel">
+  <div id="leftPanel">
+
+	
+
+	<div id="Welcomemessage">
+    <h3><font type='arial' color="Gray">Welcome {{ user.first_name }}</font></h3>
+    <!-- <h4><font type='arial' color="Gray">{{ user.username }}</font></h5> -->
+    
+	</div>
+   <div class="toplinks">
+   <h2><u>Hot-Short Topics</u></h2>
+	<p>
+	</p>
+   <h4>People @ NITT are talking about...</h4>
+    <ul>
+     <li><a href="#"><b>FooOOOood</a></li>
+     <li><a href="#">Computers</a></li>
+     <li><a href="#">Dance</a></li>
+     <li><a href="#">Muzic</a></li>
+     <li><a href="#">VLSI</a></li>
+     <li><a href="#">Lectures</a></li>
+     <li><a href="#" class="bottom">BooMBoX</a></li>
+	</b>
+    </ul>
+
+
+	</div>
+  </div> 
+
+
+ 
+
+
+  <div id="middlePanel">
+   <div class="top">
+    <h2>From our Director's Desk</h2>
+    <h3>I am very pleased to inform all of you out there that our Prime Minister Manmohan Singh is going to inaugrate silver
+	jublee building.. </h3>
+
+	{% if adminPosts.count > 0 %}
+	{% for posts in adminPosts %}
+	<p>	
+		<a href="#"><span>{{ posts.subject }}</span></a><br>
+		{{ posts.post|truncatewords:"50" }}
+	</p>
+	{% endfor %}
+	{% else %}
+		<p>
+			<span>No Posts in the Database</span>
+		</p>	
+
+	{% endif %}
+
+    <input type="submit" value="Read More"/>
+   </div>
+  </div>
+
+  <div id="rigtPanel">
+   <div class="services">
+    <h2>New Posts</h2>
+    <ul>
+		{% if userPosts.count > 0 %}
+			
+			{% for posts in userPosts %}
+				<li>
+				<div class="cal">{{ posts.pub_date.day }}<span>{{posts.pub_date.month }}/{{ posts.pub_date.year }}</span></div>
+				 <h2>{{ posts.subject }}</h2><br>
+				<p>{{ posts.post|truncatewords:"30" }}</p>
+				 <a href="/polls/auth/logged/singlepost/{{ posts.id }}">click here to view/comment </a>
+       				<div class="author"><span> by    </span><p></p>{{ posts.username }}</div>	
+				</li>
+			
+			{% endfor %}
+		{% else %}		
+		<p>
+			<span>No Posts in the Database</span>
+		</p>
+
+		{% endif %}
+	
+	</ul>
+   </div>
+   <div class="contacts">
+    <h2>Quick Posts</h2>
+    <input name="name" type="text" value="Your Name" onfocus="if(this.value=='Your Name')this.value=''" onblur="if(this.value=='')this.value='Your Name'"/>
+    <input name="email" type="text" value="Your E-mail Address" onfocus="if(this.value=='Your E-mail Address')this.value=''" onblur="if(this.value=='')this.value='Your E-mail Address'"/>
+    <textarea name="txt_msg"  rows="" cols="" onfocus="if(this.value=='Put your message here')this.value=''" onblur="if(this.value=='')this.value='Put your message here'">Put your message here</textarea>
+    <a href="#">Submit</a>
+   </div>
+  </div>
+ </div>
+</div>
+<div id="footWrap">
+ <div id="footPanel">
+  <div id="footNav">
+   
+  </div>
+  <p>© Copyright Information Goes Here. All Rights Reserved.</p>
+  <p>Designed by <a href="http://www.tumblr.com/gaurex">Gaurav</a></p>
+  <div id="validation">
+  
+  </div>
+ </div>
+</div>
+</body>
+</html>
